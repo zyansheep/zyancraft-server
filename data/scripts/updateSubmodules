@@ -1,0 +1,4 @@
+git submodule update --remote --merge
+git add $(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
+git commit -m "Upated Submodules"
+git pull

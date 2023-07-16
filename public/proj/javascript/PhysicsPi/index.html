@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="/lib/js/site/page.js"></script>
+		<link rel="stylesheet" href="/lib/css/page.css">
+		<title>Physics Pi</title>
+		<script src="/lib/js/processing.js"></script>
+		<script src="/lib/js/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Physics Pi</h1>
+		<h3 style="margin:0;">Calculating Pi with collisions</h3>
+		<canvas id="canvas" data-processing-sources="bin/web/PhysicsPi.pde"></canvas>
+		
+		<p>See <a href="https://www.youtube.com/watch?v=jsYwFizhncE">This 3Blue1Brown</a> video for explanation</p>
+		<p><a href="bin/jar/PhysicsPi.jar">Here</a> to download jar, <a href="bin/jar/core.jar">Here</a> to download processing core, run in java8 or less</p>
+
+		<script>
+			//Set canvas as focused by default
+			var canvas=document.getElementById('canvas');
+			canvas.setAttribute('tabindex','0');
+			canvas.focus();
+		</script>
+	</body>
+</html>

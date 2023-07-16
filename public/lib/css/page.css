@@ -1,0 +1,83 @@
+@import url("/lib/fonts/fonts.css");
+
+h1 {
+  font-size: 70px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: green;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 10px;
+}
+
+body {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: Papyrus, fantasy;
+  font-weight: 100;
+  overflow: scroll;
+  overscroll-behavior-x: none;
+}
+img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding: 10px;
+}
+
+a {
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', sans-serif;
+}
+p a {
+  color: rgb(200,200,200);
+  text-decoration: none;
+}
+br{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#userStatus {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  background-color: #00c109;
+  border-radius: 10px 0 0 0;
+  padding: 3px;
+  display: none;
+}
+#backButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px;
+  color: white;
+}
+
+

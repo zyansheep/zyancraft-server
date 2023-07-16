@@ -1,0 +1,10 @@
+{
+	"HTTPPort": "1080",
+	"HTTPSPort": "1443",
+	"BindAddress": "0.0.0.0",
+	"DeveloperMode": true,
+  "InsecureMode": true,
+	"KeyPath": "dev/certs/server.key",
+  "CertPath": "dev/certs/server.crt",
+	"AtomDebugger": true
+}

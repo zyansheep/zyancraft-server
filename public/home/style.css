@@ -1,0 +1,237 @@
+@import url("/lib/fonts/fonts.css");
+@import url("rainbow.css");
+@import url("glitch.css");
+
+.advertising {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 75px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+html {
+  background-color: black;
+}
+body {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: Papyrus;
+  font-weight: 100;
+  overflow: scroll;
+  overscroll-behavior-x: none;
+  
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding: 10px;
+}
+
+a {
+  color: rgb(200,200,200);
+  text-decoration: none;
+  font-family: Comic Sans MS;
+}
+
+.page {
+  display: none;
+}
+br{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.jumbotron {
+  background: linear-gradient(to bottom, green, transparent);
+  padding: 2rem 1rem;
+  border-radius: 0 !important;
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  background-color: #00c109;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 100px;
+  border: 2px solid #00c109;
+  transition: background-color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.button-unfinished {
+  display: inline-block;
+  color: white;
+  background-color: #ffaa00;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 100px;
+  border: 2px solid #ffaa00;
+  transition: background-color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.news {
+  font-family: Comic Sans MS;
+  padding: 10px;
+  background-color: #007703;
+  border-radius: 25px;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 25px;
+  align-self: center;
+}
+
+.button-disabled {
+  display: inline-block;
+  color: white;
+  background-color: #dd0000;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 100px;
+  border: 2px solid #dd0000;
+  transition: background-color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.button:hover {
+  color: #00c109;
+  background-color: transparent;
+}
+
+.button-unfinished:hover {
+  color: #ffaa00;
+  background-color: transparent;
+}
+
+.button-disabled:hover {
+  color: #dd0000;
+  background-color: transparent;
+}
+
+#userStatus {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  background-color: #00c109;
+  border-radius: 10px 0 0 0;
+  padding: 5px;
+}
+#errorPopup{
+  display: none;
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background-color: #00c109;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.login {
+  margin: auto;
+  align: center;
+}
+#password, #username {
+  border: 1px solid #a1a3a3;
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  padding-left: 37px;
+  transition: box-shadow 0.3s;
+  width: 240px;
+}
+#password{
+  visibility: hidden;
+  margin-top: 10px;
+  margin-bottom: : 10px;
+}
+#password:focus, #username:focus{
+  box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+  outline: 0;
+}
+
+#toggleType {
+  color: #7f7f7f;
+  font: 12px Comic Sans MS;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+}
+#toggleType:hover { color: #3b3b3b }
+
+#submit {
+  width:240px;
+  height:35px;
+  display: auto;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #37a69b;
+  padding-top:6px;
+  margin-top: auto;
+  position: relative;
+  cursor: pointer;
+  border: none;  
+  background-color: #37a69b;
+  background-image: linear-gradient(top,#3db0a6,#3111);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+}
+
+#submit:active {
+  top:3px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
+}

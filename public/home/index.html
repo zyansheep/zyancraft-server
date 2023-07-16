@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Zyancraft - Place of Code and Games</title>
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="/login"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron noselect">
+      <h1 class="rotatebop" data-text="ZYANCRAFT"><strong><span class="rainbow">ZYANCRAFT</span></strong></h1>
+      <p>Welcome to Zyancraft, hosted by Zyansheep from across the Internet.</p>
+    </div>
+    <ul id="main-selection" class="noselect">
+      <li><a onclick="changepage('news')" class="button" href="#">Home</a></li>
+      <li><a onclick="changepage('about')" class="button" href="#">About</a></li>
+      <li><a onclick="changepage('javascript')" class="button" href="#">JavaScript</a></li>
+      <li><a onclick="changepage('applications')" class="button" href="#">Applications</a></li>
+      <li><a onclick="changepage('minecraft')" class="button" href="#">Minecraft</a></li>
+      <li><a onclick="changepage('servers')" class="button" href="#">Servers</a></li>
+      <li><a onclick="changepage('login')" class="button" id="loginButton" href="#">Login</a></li>
+    </ul>
+    <br><br>
+    
+    <div style="display:block" id="news" class="page">
+      <h2>Zyancraft News & Updates</h2><br>
+      <div class="news">
+        <br>
+        <h4>Now with Secure HTTP!</h4>
+        <p>Thanks to the free certificate authority <a href="https://letsencrypt.org/">Let's Enncrypt</a>, zyancraft.net now has a secure connection.<br> (so people can't spy on you browsing this site)</p>
+      </div>
+      <div class="news">
+        <br>
+        <h4>Brick Breaker game</h4>
+        <p>Finished the broken game <a href="/proj/javascript/brickbreaker">Brickbreaker</a> That has been out of commision for some time</p>
+      </div>
+      <div class="news">
+        <br>
+        <h4>Mandelbrot Fractal</h4>
+        <p>Check out this neat <a href="/proj/javascript/Mandelbrot">Mandelbrot Fractal</a> explorer where you can zoom in and discover interesting mathematical shapes
+          <br>Also, autocompletion was added to the Playground command system</p>
+        </div>
+      <div class="news">
+        <br>
+        <h4>Eadot Remade</h4>
+        <p><a href="/proj/javascript/eadot">Eadot</a> has ben remodeled with new colors and functionality and is now more fun than ever :)</p>
+      </div>
+      <div class="news">
+        <br>
+        <h4>New Program <a href="/proj/javascript/PhysicsPi">PhysicsPi</a></h4>
+        <p>Check out the new program that calculates π from the collisions of blocks. Thanks to 3Blue1Brown for inspiration</p>
+      </div>
+      <div class="news">
+        <br>
+        <h4>The Playground</h4>
+        <p>Check out the Playground in the <a href="#servers" style="color:rgb(230,230,230)">Servers</a> tab for a multiplayer experience. Current programs: Draw, Chainreaction
+        <br>You must login as a guest to play on the playground</p>
+      </div>
+      <div class="news">
+        <br>
+        <h4>New Backend</h4>
+        <p>Zyancraft now uses Golang instead of Python to serve files, it also has a new login system!</p>
+      </div>
+    </div>
+    <div id="about" class="page">
+      <h2>About Zyancraft</h2><br>
+      <p>Meet the amazing creators of this site!</p>
+      <div class="news" style="background: linear-gradient(to bottom, #5200c6, #0900c6);">
+        <br>
+        <h4 class="glitch" data-text="Zyansheep" onclick="if(UserIsLogged){window.location.href='/proj/play';}">Zyansheep</h4>
+        <p>The creator of the site, this guy is awesome!</p>
+      </div>
+      <div class="news" style="background: linear-gradient(to bottom, #0900c6, #5200c6);">
+        <br>
+        <h4 onclick="window.location.href='/proj/pool'">ProfessorCampi</h4>
+        <p>Also awesome, this guy designed the look of the site! - <a href="https://github.com/ProfessorCampi">https://github.com/ProfessorCampi/</a></p>
+      </div>
+      <div class="news" style="background: linear-gradient(to bottom, #5200c6, #000000);">
+        <br>
+        <h4>Zyker Sheep</h4>
+        <p>No one knows who this <a onclick="location.href = '/proj/pool/Zykers%20Forgotten/'">guy</a> is...</p>
+      </div>
+    </div>
+    <div id="javascript" class="page">
+      <h2>JavaScript Games</h2>
+      <a class="button" href="/proj/javascript/brickbreaker">Brickbreaker</a><br>
+      <a class="button" href="/proj/javascript/Mandelbrot">Mandelbrot</a><br>
+      <a class="button" href="/proj/javascript/eadot">Eadot</a><br>
+      <a class="button" href="/proj/javascript/PhysicsPi">PhysicsPi</a><br>
+      <a class="button" href="/proj/javascript/snake">Snake</a><br>
+      <a class="button" href="/proj/javascript/paint">Paint</a><br>
+      <a class="button" href="/proj/javascript/neuralnet">Neural Net</a><br>
+      <a class="button-unfinished" href="/proj/javascript/3dstuff">3D Simulator</a><br>
+    </div>
+    <div id="applications" class="page">
+      <h2>Applications</h2>
+      <a class="button" href="/proj/applications/sauce">Sauce</a><br>
+      <a class="button" href="/proj/applications/starz">Starz</a>
+    </div>
+    <div id="minecraft" class="page">
+      <h2>Minecraft Mods & Resources</h2>
+      <a class="button" href="/proj/minecraft/zyancraft">Zyancraft</a><br>
+      <a class="button" href="/proj/minecraft/zyanmusic">ZyanMusic</a>
+    </div>
+    <div id="servers" class="page">
+      <h2>Current Servers</h2>
+      <a class="button" href="/proj/play" onclick="checkAuthForURL(event, '/proj/play')">Playground</a><br>
+      <a class="button" href="/home">Webserver</a><br>
+      <a onclick="changepage('getout')" class="button-disabled" href="#">Minecraft Modded</a><br>
+      <a onclick="changepage('getout')" class="button-disabled" href="#">Minecraft 1.12</a><br>
+      <a class="button-unfinished" href="/proj/agar">Agar.io</a><br>
+    </div>
+    <div id="login" class="page">
+      <div class="login">
+        <form id="loginForm">
+          <h2 style="padding:10px">Login</h2>
+          <input type="text" name="user" placeholder="Username" id="username" /><br/>
+          <input type="password" name="pass" placeholder="Password" id="password" /><br/>
+          <a href="#" id="toggleType" onclick='toggleLoginType()'>Login as User</a>
+          <input id="submit" type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
+    <div id="getout" class="page">
+      <h2>This server is either private or requires a membership to join!</h2>
+      <p>So you can't.</p>
+    </div>
+    <div id="userStatus">
+      Logged in as: none
+    </div>
+    <div id="errorPopup"></div>
+    <br>
+  </body>
+</html>

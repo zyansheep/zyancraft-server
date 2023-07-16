@@ -1,0 +1,97 @@
+html {
+  text-align: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-family: Papyrus, fantasy;
+  font-weight: 100;
+  overflow: scroll;
+  overscroll-behavior-x: none;
+}
+
+.upload-btn-wrapper {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+.upload-select {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.upload-display{
+  display: none;
+}
+#submit {
+  border: 2px solid gray;
+  color: gray;
+  background-color: blue;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  
+  display: none;
+}
+
+#curl-copy {
+  border: 2px solid blue;
+  color: blue;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ul {
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.frame-wrapper {
+  display:inline-block;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  width: auto;
+}
+.frame-link{
+  font-size: 30px;
+  display: block;
+  
+  width: 17ch;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.iframes {
+  width: auto;
+  height: auto;
+}
+.frame-close {
+  position: absolute;
+  top: 83px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  visibility: hidden;
+}

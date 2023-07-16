@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebMap</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 650px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var markers = [];
+      var infowindows = [];
+      var text;
+      var map;
+      function init(){
+        var MapOptions = {
+          zoom: 2,
+          center: {lat: 0, lng: 0},
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+
+        }
+        map = new google.maps.Map(document.getElementById('map'), MapOptions)
+        httpGet("GeoLocations.txt", function() {
+          LoadMarks(text.split("\n"));
+        });
+      }
+      function httpGet(theUrl, callback){
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if (request.readyState === 4) {
+            if (request.status === 200) {
+              if(callback){
+                text = request.responseText;
+                callback();
+              }
+            } else {
+              console.log("ERROR getting HTTP request");
+            }
+          }
+        };
+        request.open("GET", theUrl , true);
+        request.send(null);
+      }
+      function LoadMarks(positions){
+        for (var i = 0; i < positions.length-1; i++) {
+          var curLatPos = parseInt(positions[i].split(",")[0])
+          var curLongPos = parseInt(positions[i].split(",")[1])
+          var Title = positions[i].split(",")[2]
+          //console.log(curLatPos)
+          //console.log(curLongPos)
+          var latLng = new google.maps.LatLng(curLatPos,curLongPos);
+          //console.log(latLng)
+          markers[i] = new google.maps.Marker({
+            position: latLng,
+            title: Title,
+            map: map
+          });
+          console.log(markers[i])
+          infowindows[i] = new google.maps.InfoWindow({
+            content: Title
+          });
+          console.log(infowindows[i])
+          markers[i].addListener('click', function(innerKey) {
+            return function() {
+              map.panTo(markers[innerKey].position);
+              infowindows[innerKey].open(map, markers[innerKey]);
+            }
+          }(i));
+        }
+        //console.log(markers)
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_pX_zGOYsuvl3yb4D0HJCzGzF8mLQdZg&callback=init">
+    </script>
+  </body>
+</html>

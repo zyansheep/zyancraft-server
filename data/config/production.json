@@ -1,0 +1,9 @@
+{
+  "HTTPPort" : "1080",
+	"HTTPSPort" : "1443",
+	"BindAddress" : "0.0.0.0",
+	"DeveloperMode" : false,
+	"AtomDebugger" : false,
+  "KeyPath": "/home/zyansheep/Code/Resources/Certbot/live/zyancraft.net/privkey.pem",
+  "CertPath": "/home/zyansheep/Code/Resources/Certbot/live/zyancraft.net/fullchain.pem"
+}

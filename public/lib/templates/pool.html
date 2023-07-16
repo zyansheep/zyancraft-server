@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Zyancraft File Pool</title>
+    <link rel="stylesheet" href="/lib/css/page.css">
+    <link rel="stylesheet" href="/lib/css/pool.css">
+    <script src="/lib/js/jquery.min.js" charset="utf-8"></script>
+    <script src="/lib/js/site/page.js" charset="utf-8"></script>
+    <script src="/login" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1 id="title">Welcome to the File Pool</h1>
+    <h2 id="canDo">Here you can see miscelaneous things people have uploaded</h2>
+    <div class="upload-btn-wrapper">
+      <button class="upload-select">Select a File</button>
+      <input type="file" name="myfile" />
+    </div>
+    <p class="upload-display"></p>
+    <button id="submit">Upload</button>
+    <br>
+    {{range .PoolItems}}
+    <div class="frame-wrapper" id="{{.}}">
+      <a class="frame-link" href="/proj/pool/{{.}}">{{.}}</a>
+      <br>
+      <iframe class="frames"></iframe>
+      <a class="frame-close" onclick="closeFrame(this)" onmouseover="setExitMouseOver(true)" onmouseout="setExitMouseOver(false)">x</a>
+    </div>
+    {{end}}
+    <br>
+    <button id="curl-copy" style="display: none;">Copy CURL command to Clipboard</button>
+    <script src="/lib/js/site/pool.js" charset="utf-8"></script>
+  </body>
+</html>

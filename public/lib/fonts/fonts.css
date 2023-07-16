@@ -1,0 +1,12 @@
+@font-face{
+  font-family: Comic Sans MS;
+  font-style:normal;
+  font-weight:400;
+  src:local('Comic Sans MS'),local('ComicSansMS-Regular'),url(/lib/fonts/comic-sans.woff) format('woff'),url(/lib/fonts/comic-sans.ttf) format('truetype');
+}
+@font-face{
+  font-family: Papyrus;
+  font-style:normal;
+  font-weight:400;
+  src:local('Papyrus'),url(/lib/fonts/Papyrus.ttf) format('truetype');
+}

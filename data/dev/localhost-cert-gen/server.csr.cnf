@@ -1,0 +1,14 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=ZZ
+ST=ZyanLAnd
+L=ZyanVille
+O=Zyancraft Inc.
+OU=ZC
+emailAddress=zyansheep@zyancraft.net
+CN = Zyancraft

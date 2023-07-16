@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
+  <meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <title>Zyancraft Agar.io</title>
+  
+  <link id="favicon" rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link href="/lib/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/index.css" rel="stylesheet">
+  
+  <script src="/lib/js/jquery.min.js"></script>
+  <script src="assets/js/log.js"></script>
+  <script src="assets/js/vector.js"></script>
+  <script src="assets/js/main_out.js"></script>
+</head>
+<body>
+  <div class="modal fade" id="inPageModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="inPageModalTitle" class="modal-title">Failed to Load</h4>
+        </div>
+        <div id="inPageModalBody" class="modal-body">
+          <p>Failed to load. Please check your connection!</p>
+          <div class="center">
+            <div class="loader"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="overlays">
+    <div id="helloDialog">
+      <form role="form">
+        <div class="form-group">
+          <h2 id="title">Zyancraft Agar</h2>
+        </div>
+        
+        <div class="form-group">
+          <input id="nick" class="form-control save" data-box-id="0" placeholder="Nick" maxlength="15" />
+          <select id="gamemode" class="form-control">
+            <option value="www.zyancraft.net:11011">Zyancraft</option>
+            <option value="127.0.0.1:11011">Local 11011</option>
+            <option value="127.0.0.1:443">Local 443</option>
+            <option value="Custom">Custom</option>
+          </select>
+          <input id="custumUrl" placeholder="example.net:1234" style="display:none"></input>
+          <br clear="both" />
+        </div>
+        
+        <div class="form-group">
+          
+          <button type="submit" id="play-btn" onclick="setNick($('#nick').val()); return false;" class="btn btn-play btn-primary btn-needs-server">Play</button>
+          
+          <a id="skinButton" data-toggle="modal" data-target="#inPageModal" onclick="openSkinsList();" class="btn-primary btn btn-info" role="button">
+            <img id="curSkin" src="skins/doge.png"></img>
+          </a>
+          <br clear="both" />
+        </div>
+        
+        <div id="settings" class="checkbox">
+          <div class="form-group" id="mainform">
+            <button id="spectate-btn" onclick="spectate(); return false;" class="btn btn-warning btn-spectate btn-needs-server">Spectate
+            </button>
+            <br clear="both" />
+          </div>
+          <div style="margin: 6px;">
+            <label><input type="checkbox" class="save" data-box-id="1" onchange="setSkins(!$(this).is(':checked'));"> No skins</label>
+            <label><input type="checkbox" class="save" data-box-id="2" onchange="setNames(!$(this).is(':checked'));"> No names</label>
+            <label><input type="checkbox" class="save" data-box-id="3" onchange="setDarkTheme($(this).is(':checked'));"> Dark Theme</label>
+            <label><input type="checkbox" class="save" data-box-id="4" onchange="setColors($(this).is(':checked'));"> No colors</label>
+            <label><input type="checkbox" class="save" data-box-id="5" onchange="setShowMass($(this).is(':checked'));"> Show mass</label>
+            <label><input type="checkbox" class="save" data-box-id="6" onchange="setSmooth($(this).is(':checked'));"> Smooth Render</label>
+            <label><input type="checkbox" class="save" data-box-id="7" onchange="setChatHide($(this).is(':checked'));"> Hide Chat</label>
+          </div>
+        </div>
+        
+        <div id="instructions">
+          <hr/>
+          <center>
+            <span class="text-muted">
+              Move your mouse to control your cell<br/>
+              Press <b>Space</b> to split<br/>
+              Press <b>W</b> to eject some mass<br/>
+            </span>
+          </center>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  
+  
+  <canvas id="canvas" width="800" height="600"></canvas>
+  <div id="statusMessage" class="speech-bubble">
+    <h2>Status</h2>
+    <p>Status info here</p>
+  </div>
+  <input type="text" id="chat_textbox" placeholder="Press enter to chat!" maxlength="200" />
+  <div style="font-family:'Comic Sans'">&nbsp;</div>
+  
+  
+</body>
+</html>

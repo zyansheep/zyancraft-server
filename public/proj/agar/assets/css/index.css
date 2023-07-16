@@ -1,0 +1,247 @@
+/* GLOBAL */
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+img {
+  width: inherit;
+  height: inherit;
+}
+
+/* IDs */
+
+#overlays {
+    display:none; 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    background-color: 
+    rgba(0,0,0,0.5); 
+    z-index: 10;
+}
+
+#title {
+    padding: 10px;
+}
+
+#canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#connecting {
+    display:none;
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    z-index: 100; 
+    background-color: rgba(0,0,0,0.5);
+}
+
+#nick {
+    width: 65%;
+    float: left;
+}
+
+#gamemode {
+    width: 33%;
+    float: right;
+}
+
+#skinButton {
+  width: 13%;
+  float: right;
+}
+
+#helloDialog {
+    width: 400px;
+    background-color: #FFFFFF;
+    margin: 10px auto;
+    border-radius: 15px;
+    padding: 5px 15px 5px 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+#statusMessage {
+  width: 350px;
+  margin: 100px auto;
+  padding: 5px 15px 5px 15px;
+  z-index: 10;
+  
+}
+
+#chat_textbox {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    background: rgba(0, 0, 0, .2);
+    border: 0px;
+    outline: none;
+    color: #FFF;
+    height: 30px;
+    text-indent: 12px;
+    left: 10px;
+    width: 300px;
+}
+
+#chat_textbox:focus {
+    background: rgba(0, 0, 0, .5);
+}
+
+#footer {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+#play-btn {
+    width: 85%;
+    float: left;
+}
+
+#spectate-btn {
+    margin-top: -5px;
+    width: 100%
+}
+
+.form-group {
+  text-align: center;
+}
+#custumUrl {
+  margin-top: 10px;
+}
+
+/* CLASSES */
+
+.checkbox label {
+    margin-right: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+.center {
+    display: table;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+//Skin gallery
+.gallery {
+    width: 64%;
+    float: right;
+}
+.skin {
+    list-style-type: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    max-width: 150px;
+}
+.circular {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    background-size: 150px 150px;
+    cursor: pointer;
+}
+.circular:hover {
+    box-shadow: 0 0 12px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 12px rgba(0, 0, 0, .8);
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.skin > .title {
+    cursor: pointer;
+    text-align: center;
+}
+.skin > .title:hover {
+    text-shadow: 0 0 2px rgba(0, 0, 0, .8);
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.imgDescription {
+    text-align: center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility opacity 0.2s;
+}
+.circular:hover .imgDescription {
+    visibility: visible;
+    opacity: 1;
+}
+
+.speech-bubble {
+	position: relative;
+	background: #00b4bb;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 27px solid transparent;
+	border-top-color: #00b4bb;
+	border-bottom: 0;
+	margin-left: -27px;
+	margin-bottom: -27px;
+}

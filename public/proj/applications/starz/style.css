@@ -1,0 +1,13 @@
+.picoverlay{
+  font-size: 100px;
+  color: black;
+  position: absolute;
+  
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+img:hover + .picoverlay{
+  display: none;
+}

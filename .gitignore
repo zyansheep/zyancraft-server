@@ -1,0 +1,9 @@
+
+*.log
+gin-bin
+Manage
+.DS_Store
+src/debug
+data/certs
+public/proj/pool/*
+data/dev/localhost-cert-gen/gen
